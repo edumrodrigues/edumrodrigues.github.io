@@ -1,6 +1,7 @@
 HOME = "home", ABOUT = "about", CONTACTS = "contacts", HOME_TEXT = "home_text", ABOUT_TEXT = "about_text", CONTACTS_TEXT = "contacts_text";
 LANGUAGE_EN = "en", LANGUAGE_PT = "pt", LANG_KEY = "language";
 LIST_MENUS = [HOME, ABOUT, CONTACTS];
+HOST = "eduardorodrigues.me";
 TEXT_DICT = {
   en:{
     home: "Home",
@@ -26,8 +27,7 @@ TEXT_DICT = {
   }
 };
 window.onload = function(){
-  var host = "eduardorodrigues.me";
-  if ((host == window.location.host) && (window.location.protocol != "https:"))
+  if ((HOST == window.location.host) && (window.location.protocol != "https:"))
     window.location.protocol = "https";
   if(!localStorage.getItem(LANG_KEY))
     localStorage.setItem(LANG_KEY, LANGUAGE_EN);
