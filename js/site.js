@@ -26,6 +26,9 @@ TEXT_DICT = {
   }
 };
 window.onload = function(){
+  var host = "eduardorodrigues.me";
+  if ((host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
   if(!localStorage.getItem(LANG_KEY))
     localStorage.setItem(LANG_KEY, LANGUAGE_EN);
 
