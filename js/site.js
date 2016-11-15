@@ -1,28 +1,44 @@
-HOME = "home", ABOUT = "about", CONTACTS = "contacts", HOME_TEXT = "home_text", ABOUT_TEXT = "about_text", CONTACTS_TEXT = "contacts_text";
+HOME = "home", ABOUT = "about", CONTACTS = "contacts", HOME_TEXT = "home_text",
+ABOUT_TEXT = "about_text", CONTACTS_TEXT = "contacts_text";
 LANGUAGE_EN = "en", LANGUAGE_PT = "pt", LANG_KEY = "language";
 LIST_MENUS = [HOME, ABOUT, CONTACTS];
 HOST = "eduardorodrigues.me";
 TEXT_DICT = {
   en:{
     home: "Home",
-    about: "About",
+    about: "About me",
     contacts: "Contacts",
-    home_text: "Hi this is my home page",
+    home_text: "Welcome to my personal website. Here you can know a little bit \
+      about me and about what I do. I recommend that you visit my GitHub profile \
+      and my personal blog to see what I'm doing and what I'm working with. \
+      Thanks to visit this page and may the force be  with you!",
     about_text: "I'm Eduardo Rodrigues, Brazilian, graduated on Universidade Estadual de Montes Claros\
-      on Sistemas de Informação course. I have experience on web development backend  (Java, Python, C/C++)\
-      and frontend with javascript (with the use of certain frameworks).\
-      Nowadays I'm working with JSF with PrimeFaces UI Library. And is this it for while.",
+      on Sistemas de Informação course. I've been doing some programing since 2010 with Java, \
+      and I started to love coding. Excited with science and new technologies I always went able \
+      to learn more each day. My main experience in software development is in Java \
+      and posteriorly with Python in backend. I'm a enthusiastic with Javascript and \
+      the new tecnologies around it, like Angular Js, React and Node JS.\
+      Specialties: Object-Oriented Programming, Web development (Java EE and Python), Front End \
+      Development (Javascript, Angular JS, Primefaces) , Linux (Ubuntu), WildFly Application Server and Tomcat.",
     contacts_text: "Contact me at mrodrigues.eduardo@gmail.com"
   },
   pt:{
     home: "Início",
     about: "Sobre mim",
     contacts: "Contatos",
-    home_text: "Olá, está é minha página principal",
+    home_text: "Bem vindo ao meu site pessoal. Aqui você pode saber um pouco sobre mim e sobre \
+      o que eu faço. Eu recomendo que você visite o meu perfil GitHub e meu blog pessoal \
+      para ver o que estou fazendo e o que estou trabalhando. Obrigado por visitar esta \
+      página e que a força esteja com você!",
     about_text: "Eu sou Eduardo Rodrigues, brasileiro, me formei na Universidade Estadual de Montes Claros\
-      no curso de Sistemas de Informação. Tenho experiência no backend desenvolvimento web (Java, Python, C / C ++)\
-      e frontend com javascript (com o uso de certos quadros).\
-      Hoje em dia eu estou trabalhando com JSF com PrimeFaces Biblioteca UI. E é isso, por enquanto.",
+      no curso de Sistemas de Informação. Eu tenho feito alguma programação desde 2010 com Java, e eu comecei \
+      a amar a codificação. Animado com a ciência e as novas tecnologias eu sempre fui capaz de aprender mais \
+      a cada dia. Minha experiência principal em desenvolvimento de software é em Java e posteriormente com \
+      Python no backend. Eu sou um entusiasta com Javascript e as novas tecnologias ao seu redor, como Angular Js, \
+      React e Node JS.\
+      Especialidades: Programação Orientada a Objetos, Desenvolvimento Web (Java EE e Python), \
+      Desenvolvimento Front-End (Javascript, Angular JS, Primefaces), Linux (Ubuntu), WildFly Application Server \
+      e Tomcat",
     contacts_text: "Entre em contato em mrodrigues.eduardo@gmail.com"
   }
 };
@@ -31,7 +47,8 @@ window.onload = function(){
     window.location.protocol = "https";
   if(!localStorage.getItem(LANG_KEY))
     localStorage.setItem(LANG_KEY, LANGUAGE_EN);
-
+  else
+    setLanguage();
   document.querySelector(".link-menu").addEventListener("click", function(e){
     document.querySelectorAll(".active").forEach(function(menuItem){
       menuItem.classList.remove("active");
